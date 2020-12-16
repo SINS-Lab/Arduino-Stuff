@@ -48,7 +48,7 @@ def check_ser(q):
             ser.flushInput()
             q.put((x,z))
             # delay 10ms to give time for the KeyboardInterrupt to fire
-            time.sleep(0.01)
+            time.sleep(0.001)
         except KeyboardInterrupt:
             # In this case, we want to close the serial connection and exit
             # so we break out of the while True loop here.
