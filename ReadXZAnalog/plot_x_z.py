@@ -21,6 +21,9 @@ plot = None
 ax = None
 fig = None
 
+ser_port = 'COM4'
+ser_rate = 115200
+
 plot_window = 1024
 x_scale = 1
 z_scale = 1
@@ -31,7 +34,9 @@ y_var = np.array([])
 def check_ser(q):
     global x_scale
     global z_scale
-    ser = serial.Serial('COM4',115200)
+    global ser_port
+    global ser_rate
+    ser = serial.Serial(ser_port,ser_rate)
     ser.flushInput()
     while True:
         ser_bytes = ser.readline()
